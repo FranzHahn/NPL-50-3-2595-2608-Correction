@@ -9,7 +9,7 @@ function [] = extractImages(Name, MOS, videos_path, frames_path)
         else; fold = 'VeryGood'; 
         end
         
-        impath = strcat(frames_path, filesep, Name{ind,1}, filesep, fold);
+        impath = strcat(frames_path, Name{ind,1}, filesep, fold);
         
         if(~exist(vidpath,'dir'))
             mkdir(vidpath)
@@ -17,6 +17,7 @@ function [] = extractImages(Name, MOS, videos_path, frames_path)
         elseif(~exist(impath,'dir'))
             mkdir(impath);
         end
+        
         v = VideoReader(char(strcat(videos_path, filesep, Name{ind,1}, '.mp4')));
         f = 0;
         while hasFrame(v)

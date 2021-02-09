@@ -37,7 +37,7 @@ load KoNViD1k.mat % video names and MOS
 Name = [Name{:}]';
 
 if ~exist(videos_path,'dir')
-    disp(' Video path not found. Please provide it in line 7.');
+    disp(' Video path not found. Please provide it in line 6.');
     return
 end
 
